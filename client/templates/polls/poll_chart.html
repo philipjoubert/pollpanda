@@ -1,0 +1,8 @@
+<template name="pollChart">
+
+{{#each indexedArray polls}}
+	<h3>{{question}}</h3>
+	<canvas id="myChart-{{_index}}" width="400" height="400"></canvas>
+{{/each}}
+
+</template>

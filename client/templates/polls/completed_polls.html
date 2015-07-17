@@ -1,0 +1,8 @@
+<template name="completedPolls">
+	<p>Completed Polls</p>
+	{{pollChart}}
+
+	{{#each polls}}
+		{{> poll}}
+	{{/each}}
+</template>
