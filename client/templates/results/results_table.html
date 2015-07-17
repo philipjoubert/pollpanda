@@ -1,0 +1,18 @@
+<template name="resultsTable">
+	<table class="table">
+		<tr>
+			<th>#</th>
+			<th>Question</th>
+			<th>People</th>
+			<th>Precentage</th>
+		</tr>
+		{{#each indexedArray choices}}
+			<tr>
+				<td>{{_index}}</td>
+				<td>{{question}}</td>
+				<td>{{votes}}</td>
+				<td>TBD</td>
+			</tr>
+		{{/each}}
+	</table>
+</template>

@@ -24,22 +24,22 @@ Template.pollChart.onRendered(function() {
     console.log("check");
     data2 = [
       {
-          value: (polls[i].choices[0].votes),
+          value: polls[i].choices[0].votes,
           color:"#F7464A",
           highlight: "#FF5A5E",
-          label: "Red"
+          label: polls[i].choices[0].text
       },
       {
           value: (polls[i].choices[1].votes),
           color: "#46BFBD",
           highlight: "#5AD3D1",
-          label: "Green"
+          label: polls[i].choices[1].text
       },
       {
           value: (polls[i].choices[2].votes),
           color: "#FDB45C",
           highlight: "#FFC870",
-          label: "Yellow"
+          label: polls[i].choices[2].text
       }
     ];
     var ctx = document.getElementById("myChart-"+i).getContext("2d");

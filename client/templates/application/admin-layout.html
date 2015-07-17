@@ -1,0 +1,12 @@
+<template name="adminLayout">
+	{{> header}}
+	{{> errors}}
+	<div id="wrapper">
+		{{> sidebar}}
+		<div id="page-content-wrapper">
+			{{> yield}}
+		</div>
+	</div>
+</template>
+
+	

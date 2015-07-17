@@ -1,8 +1,32 @@
 <template name="pollChart">
-
-{{#each indexedArray polls}}
-	<h3>{{question}}</h3>
-	<canvas id="myChart-{{_index}}" width="400" height="400"></canvas>
-{{/each}}
-
+	<div id="page-results">
+    <div class="container-fluid">
+      <div class="row">
+        {{#each indexedArray polls}}
+					<div class="row">
+						<div class="col-md-2">
+							<div class="question-number">
+								<div class="circle">
+									<span>{{_index}}</span>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-10">
+							<div class="question-results">
+								<h3>{{question}}</h3>
+								<div class="row">
+									<div class="col-md-6">
+										<canvas id="myChart-{{_index}}" width="400" height="400"></canvas>
+									</div>
+									<div class="col-md-6">
+										{{> resultsTable}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				{{/each}}
+      </div>
+    </div>
+	</div>
 </template>
