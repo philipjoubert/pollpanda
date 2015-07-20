@@ -1,8 +1,15 @@
 <template name="completedPolls">
 	<p>Completed Polls</p>
-	{{pollChart}}
 
 	{{#each polls}}
 		{{> poll}}
 	{{/each}}
+
+	<select multiple class="form-control">
+	  <option>1</option>
+	  <option>2</option>
+	  <option>3</option>
+	  <option>4</option>
+	  <option>5</option>
+	</select>
 </template>

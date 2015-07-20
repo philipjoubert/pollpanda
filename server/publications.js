@@ -9,3 +9,8 @@ Meteor.publish('unansweredPolls', function() {
 Meteor.publish('completedPolls', function() {
 	return Polls.find({respondents: {$eq: this.userId}});
 });
+
+
+Meteor.publish('surveys', function() {
+	return Surveys.find();
+});

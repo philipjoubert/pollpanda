@@ -1,12 +1,38 @@
 // run this when the meteor app is started
 Meteor.startup(function() {
 
+
   // if there are no polls available create sample data
   if (Polls.find().count() === 0) {
+
+    var tomId = Meteor.users.insert({
+      profile: { name: "Tom Coleman"}
+    });
+
+    var tom = Meteor.users.findOne(tomId);
+
+    var applesId = Surveys.insert({
+      title: 'About them apples',
+      userId: tom._id,
+      author: tom.profile.name,
+      questionsCount: 0
+    });
+
+    var apples = Surveys.findOne(applesId);
+
+    var pearsId = Surveys.insert({
+      title: 'I pear you to try',
+      userId: tom._id,
+      author: tom.profile.name,
+      questionsCount: 0
+    });
+
+    var pears = Surveys.findOne(pearsId);
 
     // create sample polls
     var samplePolls = [
       {
+        surveyId: apples._id,
         question: 'Is Meteor awesome?',
         choices: [
           { text: 'Of course!', votes: 3 },
@@ -14,9 +40,10 @@ Meteor.startup(function() {
           { text: 'No. I like plain JS', votes: 2 }
         ],
         respondents: [],
-        responses: 0
+        responses: 10
       },
       {
+        surveyId: apples._id,
         question: 'Is CSS3 Flexbox the greatest thing since sliced cows?',
         choices: [
           { text: '100% yes', votes: 1 },
@@ -24,9 +51,10 @@ Meteor.startup(function() {
           { text: '300% yes', votes: 1 }
         ],
         respondents: [],
-        responses: 0
+        responses: 4
       },
       {
+        surveyId: apples._id,
         question: 'Do cows eat?',
         choices: [
           { text: '100% yes', votes: 22 },
@@ -34,19 +62,21 @@ Meteor.startup(function() {
           { text: '300% yes', votes: 42 }
         ],
         respondents: [],
-        responses: 0
+        responses: 72
       },
       {
+        surveyId: apples._id,
         question: 'Is Michael Bay the best?',
         choices: [
-          { text: '100% yes', votes: 2 },
+          { text: '100% yes', votes: 23 },
           { text: '200% yes', votes: 1 },
           { text: '300% yes', votes: 3 }
         ],
         respondents: [],
-        responses: 0
+        responses: 6
       },
       {
+        surveyId: pears._id,
         question: 'How many kittens?',
         choices: [
           { text: '100% yes', votes: 3 },
@@ -54,9 +84,10 @@ Meteor.startup(function() {
           { text: '300% yes', votes: 1 }
         ],
         respondents: [],
-        responses: 0
+        responses: 6
       },
       {
+        surveyId: pears._id,
         question: 'Question 10 is good?',
         choices: [
           { text: '100% yes', votes: 3 },
@@ -64,7 +95,7 @@ Meteor.startup(function() {
           { text: '300% yes', votes: 15 }
         ],
         respondents: [],
-        responses: 0
+        responses: 71
       }
     ];
 

@@ -123,3 +123,28 @@
         margin-right: 0;
     }
 }
+
+
+
+/*Custom Syles*/
+
+#sidebar-wrapper {
+    background-color: rgb(46,50,85);
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: rgb(90,95,141);
+}
+
+.sidebar-nav li a {
+  color: rgb(90,95,141);
+  text-transform: uppercase;
+}
+
+.sidebar-nav li {
+    text-indent: 10px;
+}
+.sidebar-nav li .fa {
+    margin-right: 10px;
+    width: 24px;
+}

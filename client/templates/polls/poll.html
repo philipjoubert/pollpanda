@@ -5,11 +5,24 @@
     <h3>{{ question }}</h3>
 
     {{ #each indexedArray choices }}
-        <a href="#" class="vote btn btn-primary btn-block" data-id="{{ _index }}">
+        <a href="#" class="choice" data-id="{{ _index }}">
             <!-- <span class="votes pull-right">{{ votes }}</span> -->
             <span class="text">{{ text }}</span>
         </a>
     {{ /each }}
+
+    <form>
+	    {{ #each indexedArray choices }}
+	    <div class="radio">
+	    	<label>
+	    		<input type="radio" name="answer" value="{{ text }}">
+	    		{{ text }}
+	    	</label>
+	    </div>
+	    {{ /each}}
+    </form>
+
+
     <span>Total votes:  {{responses}}</span>
     
 </div>

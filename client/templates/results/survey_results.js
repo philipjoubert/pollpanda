@@ -1,4 +1,4 @@
-Template.pollChart.helpers({
+Template.surveyResults.helpers({
   polls: function() {
     return Polls.find();
   }
@@ -13,7 +13,7 @@ UI.registerHelper('indexedArray', function(context, options) {
   }
 });
 
-Template.pollChart.onRendered(function() {
+Template.surveyResults.onRendered(function() {
   //console.log("hello");
   polls = Polls.find().fetch();
   console.log(polls.length);
