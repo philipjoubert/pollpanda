@@ -1,6 +1,6 @@
 Template.surveyResults.helpers({
   polls: function() {
-    return Polls.find();
+    return Polls.find({surveyId: this._id});
   }
 });
 

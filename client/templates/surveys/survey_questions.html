@@ -1,10 +1,10 @@
-<template name="surveyPage">
+<template name="surveyQuestions">
 	<h2>{{title}}</h2>
 	<p>{{author}}</p>
 
-	<ul>
-	{{#each polls}}
-		<li>
+	<ul id="question-container-sorted">
+	{{#sortable items=polls options=pollsOptions}}
+		<li data-id="{{order}}">
 			<h4>{{question}}</h4>
 			<ul>
 			{{#each choices}}
@@ -13,7 +13,7 @@
 			</ul>
 			<a class="btn btn-danger delete" href="#" data-id="{{_id}}">Delete Question</a>
 		</li>
-	{{/each}}
+	{{/sortable}}
 	</ul>
 
 

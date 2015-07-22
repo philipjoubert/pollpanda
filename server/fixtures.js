@@ -30,7 +30,7 @@ Meteor.startup(function() {
     var pears = Surveys.findOne(pearsId);
 
     // create sample polls
-    var samplePolls = [
+    var samplePolls =[
       {
         surveyId: apples._id,
         question: 'Is Meteor awesome?',
@@ -39,8 +39,9 @@ Meteor.startup(function() {
           { text: 'Eh', votes: 5 },
           { text: 'No. I like plain JS', votes: 2 }
         ],
-        respondents: [],
-        responses: 10
+        respondents: [tomId],
+        responses: 10,
+        order: 3
       },
       {
         surveyId: apples._id,
@@ -50,8 +51,9 @@ Meteor.startup(function() {
           { text: '200% yes', votes: 2 },
           { text: '300% yes', votes: 1 }
         ],
-        respondents: [],
-        responses: 4
+        respondents: [tomId],
+        responses: 4,
+        order: 2
       },
       {
         surveyId: apples._id,
@@ -62,7 +64,8 @@ Meteor.startup(function() {
           { text: '300% yes', votes: 42 }
         ],
         respondents: [],
-        responses: 72
+        responses: 72,
+        order: 1
       },
       {
         surveyId: apples._id,
@@ -73,7 +76,8 @@ Meteor.startup(function() {
           { text: '300% yes', votes: 3 }
         ],
         respondents: [],
-        responses: 6
+        responses: 6,
+        order: 4
       },
       {
         surveyId: pears._id,
@@ -97,7 +101,7 @@ Meteor.startup(function() {
         respondents: [],
         responses: 71
       }
-    ];
+    ]
 
     // loop over each sample poll and insert into database
     _.each(samplePolls, function(poll) {

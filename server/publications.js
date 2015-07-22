@@ -1,5 +1,14 @@
-Meteor.publish('polls', function() {
-	return Polls.find();
+Meteor.publish('surveys', function() {
+	return Surveys.find();
+});
+
+Meteor.publish('singleSurvey', function(surveyId) {
+	check(surveyId, String);
+	return Surveys.find(surveyId);
+});
+
+Meteor.publish('polls', function(surveyId) {
+	return Polls.find({surveyId: surveyId});
 });
 
 Meteor.publish('unansweredPolls', function() {
@@ -10,7 +19,3 @@ Meteor.publish('completedPolls', function() {
 	return Polls.find({respondents: {$eq: this.userId}});
 });
 
-
-Meteor.publish('surveys', function() {
-	return Surveys.find();
-});
